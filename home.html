@@ -1,0 +1,3437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Appizy">
+    <title>
+      DhCalc
+    </title><!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;display=swap" rel="stylesheet">
+    <style>
+        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+    html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+    }
+
+    body {
+    margin: 0
+    }
+
+    main {
+    display: block
+    }
+
+    h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+    }
+
+    hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+    }
+
+    pre {
+    font-family: monospace, monospace;
+    font-size: 1em
+    }
+
+    a {
+    background-color: transparent
+    }
+
+    abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted
+    }
+
+    b, strong {
+    font-weight: bolder
+    }
+
+    code, kbd, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+    }
+
+    small {
+    font-size: 80%
+    }
+
+    sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+    }
+
+    sub {
+    bottom: -0.25em
+    }
+
+    sup {
+    top: -0.5em
+    }
+
+    img {
+    border-style: none
+    }
+
+    button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+    }
+
+    button, input {
+    overflow: visible
+    }
+
+    button, select {
+    text-transform: none
+    }
+
+    [type="button"], [type="reset"], [type="submit"], button {
+    -webkit-appearance: button
+    }
+
+    [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner, button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+    }
+
+    [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring, button:-moz-focusring {
+    outline: 1px dotted ButtonText
+    }
+
+    fieldset {
+    padding: 0.35em 0.75em 0.625em
+    }
+
+    legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal
+    }
+
+    progress {
+    vertical-align: baseline
+    }
+
+    textarea {
+    overflow: auto
+    }
+
+    [type="checkbox"], [type="radio"] {
+    box-sizing: border-box;
+    padding: 0
+    }
+
+    [type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+    height: auto
+    }
+
+    [type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+    }
+
+    [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none
+    }
+
+    ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+    }
+
+    details {
+    display: block
+    }
+
+    summary {
+    display: list-item
+    }
+
+    template {
+    display: none
+    }
+
+    [hidden] {
+    display: none
+    }
+
+    /* APPIZY */
+    .appizy * {
+    box-sizing: border-box;
+    }
+
+    .appizy {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10px;
+    padding: 5px;
+    width: 100%;
+    }
+
+    .application-align-center {
+    margin: auto;
+    }
+
+    .application-align-right {
+    margin-left: auto;
+    margin-right: 0;
+    }
+
+    .application-layout-fixed .tabs {
+    overflow-x: auto;
+    }
+
+    .application-layout-fit-parent {
+    width: 100%;
+    }
+
+    .application-layout-fit-parent table {
+    table-layout: auto;
+    width: 100%;
+    }
+
+    .draw-frame {
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    }
+
+    .draw-frame-layout-fixed {
+    margin: 0;
+    position: absolute;
+    }
+
+    .draw-frame-layout-fluid,
+    .draw-frame-layout-fit-parent {
+    margin: 10px 0;
+    width: 100%;
+    }
+
+    .chart {
+    background: white;
+    border: 1px solid #ebebeb;
+    }
+
+    table {
+    table-layout: fixed;
+    border: none;
+    border-collapse: collapse;
+    }
+
+    tbody {
+    border: none;
+    }
+
+    tr {
+    min-height: 10px;
+    }
+
+    td {
+    padding: 2px;
+    line-height: normal;
+    }
+
+    td > div {
+    padding: 6px 0;
+    }
+
+    input {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #C2C2C2;
+    border-radius: 3px;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 5px;
+    text-align: inherit;
+    vertical-align: text-bottom;
+    width: 100%;
+    }
+
+    select {
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
+    width: 100%;
+    }
+
+    p {
+    margin: 0;
+    }
+
+    .in {
+    text-align: right;
+    }
+
+    .in--text {
+    text-align: left;
+    }
+
+    .out {
+    text-align: right;
+    }
+
+    .out--text {
+    text-align: left;
+    }
+
+    .help-text {
+    color: #6c757d;
+    font-size: 0.7rem;
+    margin-top: .25rem;
+    padding: 0;
+    text-align: left;
+    }
+
+    .hidden-cell {
+    display: none;
+    }
+
+    .hidden-row {
+    display: none;
+    }
+
+    textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    resize: none;
+    width: 100%;
+    }
+
+    .btn {
+    background-color: white;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-family: inherit;
+    }
+
+    .action-bar {
+    border-top: 1px solid #d4d4d1;
+    margin-top: 10px;
+    padding-top: 10px;
+    }
+
+    .tab-content {
+    padding: 0 10px;
+    position: relative;
+    }
+
+    @media print {
+    .action-bar {
+        display: none;
+    }
+    }
+
+        .Default {
+    font-size: 15px;
+    }
+    .Heading {
+    font-size: 32px;
+    font-weight: bold;
+    }
+    .Heading_20_1 {
+    font-size: 24px;
+    }
+    .Heading_20_2 {
+    font-size: 16px;
+    }
+    .Text {
+    font-size: 15px;
+    }
+    .Note {
+    color: #333333;
+    font-size: 13px;
+    background-color: #ffffcc;
+    border: 0.74pt solid #808080;
+    }
+    .Footnote {
+    color: #808080;
+    font-size: 13px;
+    font-style: italic;
+    }
+    .Hyperlink {
+    color: #0000ee;
+    font-size: 13px;
+    text-decoration: underline;
+    }
+    .Status {
+    font-size: 15px;
+    }
+    .Good {
+    color: #006600;
+    font-size: 13px;
+    background-color: #ccffcc;
+    }
+    .Neutral {
+    color: #996600;
+    font-size: 13px;
+    background-color: #ffffcc;
+    }
+    .Bad {
+    color: #cc0000;
+    font-size: 13px;
+    background-color: #ffcccc;
+    }
+    .Warning {
+    color: #cc0000;
+    font-size: 13px;
+    }
+    .Error {
+    color: #ffffff;
+    font-size: 13px;
+    background-color: #cc0000;
+    font-weight: bold;
+    }
+    .Accent {
+    font-size: 13px;
+    font-weight: bold;
+    }
+    .Accent_20_1 {
+    color: #ffffff;
+    font-size: 13px;
+    }
+    .Accent_20_2 {
+    color: #ffffff;
+    font-size: 13px;
+    background-color: #808080;
+    }
+    .Accent_20_3 {
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #dddddd;
+    }
+    .Result {
+    font-size: 13px;
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: bold;
+    }
+    .Excel_20_Built-in_20_Hyperlink {
+    color: #0563c1;
+    font-size: 15px;
+    text-decoration: underline;
+    }
+    .Excel_20_Built-in_20_Comma {
+    font-size: 15px;
+    }
+    .Excel_20_Built-in_20_Percent {
+    font-size: 15px;
+    }
+    .co1 {
+    width: 369px;
+    }
+    .co2 {
+    width: 80px;
+    }
+    .co3 {
+    width: 351px;
+    }
+    .co4 {
+    width: 75px;
+    }
+    .ro1 {
+    height: 37px;
+    }
+    .ro2 {
+    height: 49px;
+    }
+    .ro3 {
+    height: 20px;
+    }
+    .ro4 {
+    height: 21px;
+    }
+    .ro5 {
+    height: 71px;
+    }
+    .ro6 {
+    height: 54px;
+    }
+    .ro7 {
+    height: 41px;
+    }
+    .ro8 {
+    height: 39px;
+    }
+    .ce1 {
+    font-size: 20px;
+    background-color: #ffffff;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    }
+    .ce2 {
+    font-size: 33px;
+    background-color: #ffffff;
+    border: none;
+    text-align: center;
+    }
+    .ce3 {
+    font-size: 15px;
+    background-color: #ffffff;
+    border: none;
+    font-weight: bold;
+    }
+    .ce4 {
+    font-size: 15px;
+    border-bottom: 0.74pt solid #808080;
+    background-color: #ffffff;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: center;
+    font-weight: bold;
+    }
+    .ce5 {
+    font-size: 15px;
+    border-bottom: 0.74pt solid #808080;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: center;
+    }
+    .ce6 {
+    font-size: 13px;
+    border-bottom: 0.74pt solid #a6a6a6;
+    background-color: #ffffff;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: center;
+    font-weight: bold;
+    }
+    .ce7 {
+    font-size: 13px;
+    background-color: #ffffff;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    }
+    .ce8 {
+    color: #0070c0;
+    font-size: 15px;
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    }
+    .ce9 {
+    font-size: 20px;
+    background-color: #ffffff;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    }
+    .ce10 {
+    font-size: 33px;
+    background-color: #ffffff;
+    border: none;
+    text-align: center;
+    }
+    .ce11 {
+    font-size: 15px;
+    background-color: #ffffff;
+    }
+    .ce12 {
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #ffffff;
+    border: none;
+    }
+    .ce13 {
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #ffffff;
+    border: none;
+    }
+    .ce14 {
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #0d0d0d;
+    border: 1.76pt solid #a6a6a6;
+    text-align: end;
+    }
+    .ce15 {
+    font-size: 15px;
+    background-color: #ffffff;
+    border: none;
+    }
+    .ce16 {
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #0d0d0d;
+    border: 1.76pt solid #a6a6a6;
+    }
+    .ce17 {
+    color: #0070c0;
+    font-size: 15px;
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    }
+    .ce18 {
+    font-size: 24px;
+    border-bottom: 1.76pt solid #808080;
+    background-color: #ffffff;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: center;
+    }
+    .ce19 {
+    font-size: 15px;
+    border: none;
+    }
+    .ce20 {
+    font-size: 15px;
+    border: none;
+    font-weight: bold;
+    }
+    .ce21 {
+    font-size: 15px;
+    border-bottom: 1.76pt solid #808080;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    }
+    .ce22 {
+    color: #0563c1;
+    font-size: 15px;
+    text-decoration: underline;
+    background-color: #ffffff;
+    border: none;
+    text-align: center;
+    }
+    .ce23 {
+    font-size: 24px;
+    border-bottom: 1.76pt solid #808080;
+    background-color: #ffffff;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: center;
+    }
+    .ce24 {
+    font-size: 15px;
+    background-color: #ffffff;
+    border: none;
+    }
+    .ce25 {
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #0d0d0d;
+    border: 1.76pt solid #808080;
+    }
+    .ce26 {
+    font-size: 15px;
+    border: none;
+    }
+    .ce27 {
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #0d0d0d;
+    border: 1.76pt solid #808080;
+    }
+    .ce28 {
+    font-size: 15px;
+    background-color: #ffffff;
+    border: none;
+    font-weight: bold;
+    }
+    .ce29 {
+    font-size: 15px;
+    background-color: #ffffff;
+    border: none;
+    }
+    .ce30 {
+    font-size: 15px;
+    border: none;
+    }
+    .ce31 {
+    font-size: 15px;
+    border-bottom: 1.76pt solid #808080;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    }
+    .ce32 {
+    color: #0563c1;
+    font-size: 15px;
+    text-decoration: underline;
+    background-color: #ffffff;
+    border: none;
+    text-align: center;
+    }
+    .ce33 {
+    font-size: 15px;
+    }
+    .ce34 {
+    font-size: 15px;
+    }
+    .ce35 {
+    font-size: 15px;
+    }
+    .ce36 {
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    }
+    .ce37 {
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #0d0d0d;
+    border: 1.76pt solid #808080;
+    }
+    .ce38 {
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #0d0d0d;
+    border: 1.76pt solid #808080;
+    }
+
+
+                .nav {
+    border-bottom: 1px solid #d4d4d1;
+    padding: 0;
+    margin: 0 0 10px 0;
+    }
+
+    .nav li {
+    height: 30px;
+    line-height: 30px;
+    list-style: none;
+    background-color: #ccc;
+    border-top: 1px solid #d4d4d1;
+    border-right: 1px solid #d4d4d1;
+    border-left: 1px solid #d4d4d1;
+    border-radius: 5px 5px 0 0;
+    display: inline-block;
+    margin-right: 5px;
+    }
+
+    .nav li.active {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 5;
+    }
+
+    .nav li a {
+    padding: 10px;
+    color: #595959;
+    text-decoration: none;
+    }
+
+    .nav .active a {
+    color: #000;
+    }
+
+    .tabs {
+    margin-bottom: 20px;
+    }
+
+    .tab-content {
+    padding: 0 10px;
+    display: none;
+    }
+
+    .tab-content.active {
+    display: block;
+    }
+
+    @media print {
+    .nav li.active {
+        font-weight: bold;
+    }
+    }            
+    </style>
+  </head>
+  <body>
+    <div class="appizy">
+      <div class="application-layout-fit-parent application-align-left">
+        <div class="application">
+          <ul class="nav">
+            <li class="nav-item active">
+              <a href="#sheet1">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sheet2">DIRETTO</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sheet3">BIGA</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sheet4">POOLISH</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sheet5">SPONGE</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sheet6">AUTOLISI</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sheet7">WATER-ROUX</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sheet8">MILK ROUX</a>
+            </li>
+          </ul>
+          <div class="tabs">
+            <div id="sheet1" class="tab-content active">
+              <table>
+                <colgroup>
+                  <col span="1" class="co1">
+                  <col span="1" class="co2">
+                </colgroup>
+                <tbody>
+                  <tr class="s0r0 ro1">
+                    <td></td>
+                  </tr>
+                  <tr class="s0r1 ro2">
+                    <td class="s0r1c0 text ce2" colspan="2">
+                      <p>
+                        Dh-Calc
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s0r2 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s0r3 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s0r4 ro3">
+                    <td class="s0r4c0 text ce4" colspan="2">
+                      <p>
+                        Quanto vuoi impastare?
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s0r5 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s0r6 ro4">
+                    <td class="s0r6c0 text ce3">
+                      <p>
+                        n° panetti
+                      </p>
+                    </td>
+                    <td class="s0r6c1 in ce14">
+                      <input id="s0r6c1">
+                    </td>
+                  </tr>
+                  <tr class="s0r7 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s0r8 ro4">
+                    <td class="s0r8c0 text ce3">
+                      <p>
+                        Peso panetti (g)
+                      </p>
+                    </td>
+                    <td class="s0r8c1 in ce16">
+                      <input id="s0r8c1">
+                    </td>
+                  </tr>
+                  <tr class="s0r9 ro3">
+                    <td class="s0r9c0 text ce5" colspan="2"></td>
+                  </tr>
+                  <tr class="s0r10 ro3">
+                    <td class="s0r10c0 text ce6" colspan="2" rowspan="5">
+                      <p>
+                        Semplice calcolatore di ingredienti per impasti, non contempla il lievito perché non è un compositore di ricette ma soprattutto perché il lievito va usato in base all'esperienza
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s0r11 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s0r12 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s0r13 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s0r14 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s0r15 ro3">
+                    <td class="s0r15c0 text ce8" colspan="2">
+                      <p>
+                        <a href="https://www.instagram.com/kikk0s/?hl=it" target="_blank">Powered By Kikk0s</a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="sheet2" class="tab-content">
+              <table>
+                <colgroup>
+                  <col span="1" class="co3">
+                  <col span="1" class="co2">
+                </colgroup>
+                <tbody>
+                  <tr class="s1r0 ro5">
+                    <td class="s1r0c0 text ce18" colspan="2">
+                      <p>
+                        Diretto
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s1r1 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s1r2 ro3">
+                    <td class="s1r2c0 text ce4" colspan="2">
+                      <p>
+                        DATI DI INPUT
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s1r3 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s1r4 ro3">
+                    <td class="s1r4c0 text ce20">
+                      <p>
+                        Quantità finale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s1r4c1 out ce24">
+                      <div id="s1r4c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s1r5 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s1r6 ro4">
+                    <td class="s1r6c0 text ce20">
+                      <p>
+                        Idratazione finale impasto %
+                      </p>
+                    </td>
+                    <td class="s1r6c1 in ce25">
+                      <input id="s1r6c1">
+                    </td>
+                  </tr>
+                  <tr class="s1r7 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s1r8 ro4">
+                    <td class="s1r8c0 text ce20">
+                      <p>
+                        Sale totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s1r8c1 in ce27">
+                      <input id="s1r8c1">
+                    </td>
+                  </tr>
+                  <tr class="s1r9 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s1r10 ro4">
+                    <td class="s1r10c0 text ce20">
+                      <p>
+                        Olio totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s1r10c1 in ce27">
+                      <input id="s1r10c1">
+                    </td>
+                  </tr>
+                  <tr class="s1r11 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s1r12 ro3">
+                    <td class="s1r12c0 text ce20">
+                      <p>
+                        Quantità totale farina impasto (g)
+                      </p>
+                    </td>
+                    <td class="s1r12c1 out ce28">
+                      <div id="s1r12c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s1r13 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s1r14 ro3">
+                    <td class="s1r14c0 text ce4" colspan="2">
+                      <p>
+                        DOSI
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s1r15 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s1r16 ro3">
+                    <td class="s1r16c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s1r16c1 out ce30">
+                      <div id="s1r16c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s1r17 ro3">
+                    <td class="s1r17c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s1r17c1 out ce30">
+                      <div id="s1r17c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s1r18 ro3">
+                    <td class="s1r18c0 text ce19">
+                      <p>
+                        Sale (g)
+                      </p>
+                    </td>
+                    <td class="s1r18c1 out ce30">
+                      <div id="s1r18c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s1r19 ro4">
+                    <td class="s1r19c0 text ce21">
+                      <p>
+                        Olio (g)
+                      </p>
+                    </td>
+                    <td class="s1r19c1 out ce31">
+                      <div id="s1r19c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s1r20 ro3">
+                    <td class="s1r20c0 text ce22" colspan="2">
+                      <p>
+                        <a href="#HOME.A1" target="_blank">Clicca per ritornare alla Home</a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="sheet3" class="tab-content">
+              <table>
+                <colgroup>
+                  <col span="1" class="co3">
+                  <col span="1" class="co4">
+                </colgroup>
+                <tbody>
+                  <tr class="s2r0 ro6">
+                    <td class="s2r0c0 text ce18" colspan="2">
+                      <p>
+                        Biga
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s2r1 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r2 ro7">
+                    <td class="s2r2c0 text ce4" colspan="2">
+                      <p>
+                        DATI DI INPUT
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s2r3 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r4 ro3">
+                    <td class="s2r4c0 text ce20">
+                      <p>
+                        Quantità finale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s2r4c1 out ce24">
+                      <div id="s2r4c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s2r5 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r6 ro4">
+                    <td class="s2r6c0 text ce20">
+                      <p>
+                        Idratazione finale impasto %
+                      </p>
+                    </td>
+                    <td class="s2r6c1 in ce25">
+                      <input id="s2r6c1">
+                    </td>
+                  </tr>
+                  <tr class="s2r7 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r8 ro4">
+                    <td class="s2r8c0 text ce20">
+                      <p>
+                        Sale totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s2r8c1 in ce27">
+                      <input id="s2r8c1">
+                    </td>
+                  </tr>
+                  <tr class="s2r9 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r10 ro4">
+                    <td class="s2r10c0 text ce20">
+                      <p>
+                        Olio totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s2r10c1 in ce27">
+                      <input id="s2r10c1">
+                    </td>
+                  </tr>
+                  <tr class="s2r11 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r12 ro3">
+                    <td class="s2r12c0 text ce20">
+                      <p>
+                        Quantità totale farina impasto (g)
+                      </p>
+                    </td>
+                    <td class="s2r12c1 out ce28">
+                      <div id="s2r12c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s2r13 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r14 ro1">
+                    <td class="s2r14c0 text ce4" colspan="2">
+                      <p>
+                        BIGA
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s2r15 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r16 ro4">
+                    <td class="s2r16c0 text ce19">
+                      <p>
+                        Percentuale di utilizzo BIGA %
+                      </p>
+                    </td>
+                    <td class="s2r16c1 in ce25">
+                      <input id="s2r16c1">
+                    </td>
+                  </tr>
+                  <tr class="s2r17 ro3">
+                    <td class="s2r17c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s2r17c1 out ce30">
+                      <div id="s2r17c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s2r18 ro3">
+                    <td class="s2r18c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s2r18c1 out ce30">
+                      <div id="s2r18c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s2r19 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r20 ro8">
+                    <td class="s2r20c0 text ce4" colspan="2">
+                      <p>
+                        RINFRESCO
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s2r21 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s2r22 ro3">
+                    <td class="s2r22c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s2r22c1 out ce30">
+                      <div id="s2r22c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s2r23 ro3">
+                    <td class="s2r23c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s2r23c1 out ce30">
+                      <div id="s2r23c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s2r24 ro3">
+                    <td class="s2r24c0 text ce19">
+                      <p>
+                        Sale (g)
+                      </p>
+                    </td>
+                    <td class="s2r24c1 out ce30">
+                      <div id="s2r24c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s2r25 ro4">
+                    <td class="s2r25c0 text ce21">
+                      <p>
+                        Olio (g)
+                      </p>
+                    </td>
+                    <td class="s2r25c1 out ce31">
+                      <div id="s2r25c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s2r26 ro3">
+                    <td class="s2r26c0 text ce22" colspan="2">
+                      <p>
+                        <a href="#HOME.A1" target="_blank">Clicca per ritornare alla Home</a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="sheet4" class="tab-content">
+              <table>
+                <colgroup>
+                  <col span="1" class="co3">
+                  <col span="1" class="co4">
+                </colgroup>
+                <tbody>
+                  <tr class="s3r0 ro6">
+                    <td class="s3r0c0 text ce18" colspan="2">
+                      <p>
+                        Poolish
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s3r1 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r2 ro7">
+                    <td class="s3r2c0 text ce4" colspan="2">
+                      <p>
+                        DATI DI INPUT
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s3r3 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r4 ro3">
+                    <td class="s3r4c0 text ce20">
+                      <p>
+                        Quantità finale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s3r4c1 out ce24">
+                      <div id="s3r4c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s3r5 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r6 ro4">
+                    <td class="s3r6c0 text ce20">
+                      <p>
+                        Idratazione finale impasto %
+                      </p>
+                    </td>
+                    <td class="s3r6c1 in ce25">
+                      <input id="s3r6c1">
+                    </td>
+                  </tr>
+                  <tr class="s3r7 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r8 ro4">
+                    <td class="s3r8c0 text ce20">
+                      <p>
+                        Sale totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s3r8c1 in ce27">
+                      <input id="s3r8c1">
+                    </td>
+                  </tr>
+                  <tr class="s3r9 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r10 ro4">
+                    <td class="s3r10c0 text ce20">
+                      <p>
+                        Olio totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s3r10c1 in ce27">
+                      <input id="s3r10c1">
+                    </td>
+                  </tr>
+                  <tr class="s3r11 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r12 ro3">
+                    <td class="s3r12c0 text ce20">
+                      <p>
+                        Quantità totale farina impasto (g)
+                      </p>
+                    </td>
+                    <td class="s3r12c1 out ce28">
+                      <div id="s3r12c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s3r13 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r14 ro1">
+                    <td class="s3r14c0 text ce4" colspan="2">
+                      <p>
+                        POOLISH
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s3r15 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r16 ro4">
+                    <td class="s3r16c0 text ce19">
+                      <p>
+                        Percentuale di utilizzo POOLISH %
+                      </p>
+                    </td>
+                    <td class="s3r16c1 in ce25">
+                      <input id="s3r16c1">
+                    </td>
+                  </tr>
+                  <tr class="s3r17 ro3">
+                    <td class="s3r17c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s3r17c1 out ce30">
+                      <div id="s3r17c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s3r18 ro3">
+                    <td class="s3r18c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s3r18c1 out ce30">
+                      <div id="s3r18c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s3r19 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r20 ro8">
+                    <td class="s3r20c0 text ce4" colspan="2">
+                      <p>
+                        RINFRESCO
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s3r21 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s3r22 ro3">
+                    <td class="s3r22c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s3r22c1 out ce30">
+                      <div id="s3r22c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s3r23 ro3">
+                    <td class="s3r23c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s3r23c1 out ce30">
+                      <div id="s3r23c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s3r24 ro3">
+                    <td class="s3r24c0 text ce19">
+                      <p>
+                        Sale (g)
+                      </p>
+                    </td>
+                    <td class="s3r24c1 out ce30">
+                      <div id="s3r24c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s3r25 ro4">
+                    <td class="s3r25c0 text ce21">
+                      <p>
+                        Olio (g)
+                      </p>
+                    </td>
+                    <td class="s3r25c1 out ce31">
+                      <div id="s3r25c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s3r26 ro3">
+                    <td class="s3r26c0 text ce22" colspan="2">
+                      <p>
+                        <a href="#HOME.A1" target="_blank">Clicca per ritornare alla Home</a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="sheet5" class="tab-content">
+              <table>
+                <colgroup>
+                  <col span="1" class="co3">
+                  <col span="1" class="co4">
+                </colgroup>
+                <tbody>
+                  <tr class="s4r0 ro6">
+                    <td class="s4r0c0 text ce18" colspan="2">
+                      <p>
+                        Sponge
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s4r1 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r2 ro7">
+                    <td class="s4r2c0 text ce4" colspan="2">
+                      <p>
+                        DATI DI INPUT
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s4r3 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r4 ro3">
+                    <td class="s4r4c0 text ce20">
+                      <p>
+                        Quantità finale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s4r4c1 out ce24">
+                      <div id="s4r4c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s4r5 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r6 ro4">
+                    <td class="s4r6c0 text ce20">
+                      <p>
+                        Idratazione finale impasto %
+                      </p>
+                    </td>
+                    <td class="s4r6c1 in ce25">
+                      <input id="s4r6c1">
+                    </td>
+                  </tr>
+                  <tr class="s4r7 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r8 ro4">
+                    <td class="s4r8c0 text ce20">
+                      <p>
+                        Sale totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s4r8c1 in ce27">
+                      <input id="s4r8c1">
+                    </td>
+                  </tr>
+                  <tr class="s4r9 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r10 ro4">
+                    <td class="s4r10c0 text ce20">
+                      <p>
+                        Olio totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s4r10c1 in ce27">
+                      <input id="s4r10c1">
+                    </td>
+                  </tr>
+                  <tr class="s4r11 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r12 ro3">
+                    <td class="s4r12c0 text ce20">
+                      <p>
+                        Quantità totale farina impasto (g)
+                      </p>
+                    </td>
+                    <td class="s4r12c1 out ce28">
+                      <div id="s4r12c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s4r13 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r14 ro1">
+                    <td class="s4r14c0 text ce4" colspan="2">
+                      <p>
+                        SPONGE
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s4r15 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r16 ro4">
+                    <td class="s4r16c0 text ce19">
+                      <p>
+                        Percentuale di utilizzo prefermento %
+                      </p>
+                    </td>
+                    <td class="s4r16c1 in ce25">
+                      <input id="s4r16c1">
+                    </td>
+                  </tr>
+                  <tr class="s4r17 ro4">
+                    <td class="s4r17c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s4r17c1 out ce30">
+                      <div id="s4r17c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s4r18 ro4">
+                    <td class="s4r18c0 text ce19">
+                      <p>
+                        Idtratazione (g)
+                      </p>
+                    </td>
+                    <td class="s4r18c1 in ce37">
+                      <input id="s4r18c1">
+                    </td>
+                  </tr>
+                  <tr class="s4r19 ro4">
+                    <td class="s4r19c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s4r19c1 out ce30">
+                      <div id="s4r19c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s4r20 ro4">
+                    <td class="s4r20c0 text ce36">
+                      <p>
+                        Sale %
+                      </p>
+                    </td>
+                    <td class="s4r20c1 in ce38">
+                      <input id="s4r20c1">
+                    </td>
+                  </tr>
+                  <tr class="s4r21 ro3">
+                    <td class="s4r21c0 text ce19">
+                      <p>
+                        Sale (g)
+                      </p>
+                    </td>
+                    <td class="s4r21c1 out ce30">
+                      <div id="s4r21c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s4r22 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r23 ro8">
+                    <td class="s4r23c0 text ce4" colspan="2">
+                      <p>
+                        RINFRESCO
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s4r24 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s4r25 ro3">
+                    <td class="s4r25c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s4r25c1 out ce30">
+                      <div id="s4r25c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s4r26 ro3">
+                    <td class="s4r26c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s4r26c1 out ce30">
+                      <div id="s4r26c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s4r27 ro3">
+                    <td class="s4r27c0 text ce19">
+                      <p>
+                        Sale (g)
+                      </p>
+                    </td>
+                    <td class="s4r27c1 out ce30">
+                      <div id="s4r27c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s4r28 ro4">
+                    <td class="s4r28c0 text ce21">
+                      <p>
+                        Olio (g)
+                      </p>
+                    </td>
+                    <td class="s4r28c1 out ce31">
+                      <div id="s4r28c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s4r29 ro3">
+                    <td class="s4r29c0 text ce22" colspan="2">
+                      <p>
+                        <a href="#HOME.A1" target="_blank">Clicca per ritornare alla Home</a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="sheet6" class="tab-content">
+              <table>
+                <colgroup>
+                  <col span="1" class="co3">
+                  <col span="1" class="co4">
+                </colgroup>
+                <tbody>
+                  <tr class="s5r0 ro6">
+                    <td class="s5r0c0 text ce18" colspan="2">
+                      <p>
+                        Autolisi
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s5r1 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r2 ro7">
+                    <td class="s5r2c0 text ce4" colspan="2">
+                      <p>
+                        DATI DI INPUT
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s5r3 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r4 ro3">
+                    <td class="s5r4c0 text ce20">
+                      <p>
+                        Quantità finale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s5r4c1 out ce24">
+                      <div id="s5r4c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s5r5 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r6 ro4">
+                    <td class="s5r6c0 text ce20">
+                      <p>
+                        Idratazione finale impasto %
+                      </p>
+                    </td>
+                    <td class="s5r6c1 in ce25">
+                      <input id="s5r6c1">
+                    </td>
+                  </tr>
+                  <tr class="s5r7 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r8 ro4">
+                    <td class="s5r8c0 text ce20">
+                      <p>
+                        Sale totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s5r8c1 in ce27">
+                      <input id="s5r8c1">
+                    </td>
+                  </tr>
+                  <tr class="s5r9 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r10 ro4">
+                    <td class="s5r10c0 text ce20">
+                      <p>
+                        Olio totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s5r10c1 in ce27">
+                      <input id="s5r10c1">
+                    </td>
+                  </tr>
+                  <tr class="s5r11 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r12 ro3">
+                    <td class="s5r12c0 text ce20">
+                      <p>
+                        Quantità totale farina impasto (g)
+                      </p>
+                    </td>
+                    <td class="s5r12c1 out ce28">
+                      <div id="s5r12c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s5r13 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r14 ro1">
+                    <td class="s5r14c0 text ce4" colspan="2">
+                      <p>
+                        AUTOLISI
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s5r15 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r16 ro4">
+                    <td class="s5r16c0 text ce19">
+                      <p>
+                        Percentuale di utilizzo autolisi %
+                      </p>
+                    </td>
+                    <td class="s5r16c1 in ce25">
+                      <input id="s5r16c1">
+                    </td>
+                  </tr>
+                  <tr class="s5r17 ro4">
+                    <td class="s5r17c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s5r17c1 out ce30">
+                      <div id="s5r17c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s5r18 ro4">
+                    <td class="s5r18c0 text ce19">
+                      <p>
+                        Idtratazione (g)
+                      </p>
+                    </td>
+                    <td class="s5r18c1 in ce37">
+                      <input id="s5r18c1">
+                    </td>
+                  </tr>
+                  <tr class="s5r19 ro3">
+                    <td class="s5r19c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s5r19c1 out ce30">
+                      <div id="s5r19c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s5r20 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r21 ro8">
+                    <td class="s5r21c0 text ce4" colspan="2">
+                      <p>
+                        CHIUSURA IMPASTO
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s5r22 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s5r23 ro3">
+                    <td class="s5r23c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s5r23c1 out ce30">
+                      <div id="s5r23c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s5r24 ro3">
+                    <td class="s5r24c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s5r24c1 out ce30">
+                      <div id="s5r24c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s5r25 ro3">
+                    <td class="s5r25c0 text ce19">
+                      <p>
+                        Sale (g)
+                      </p>
+                    </td>
+                    <td class="s5r25c1 out ce30">
+                      <div id="s5r25c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s5r26 ro4">
+                    <td class="s5r26c0 text ce21">
+                      <p>
+                        Olio (g)
+                      </p>
+                    </td>
+                    <td class="s5r26c1 out ce31">
+                      <div id="s5r26c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s5r27 ro3">
+                    <td class="s5r27c0 text ce22" colspan="2">
+                      <p>
+                        <a href="#HOME.A1" target="_blank">Clicca per ritornare alla Home</a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="sheet7" class="tab-content">
+              <table>
+                <colgroup>
+                  <col span="1" class="co3">
+                  <col span="1" class="co4">
+                </colgroup>
+                <tbody>
+                  <tr class="s6r0 ro6">
+                    <td class="s6r0c0 text ce18" colspan="2">
+                      <p>
+                        Water Roux
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s6r1 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r2 ro7">
+                    <td class="s6r2c0 text ce4" colspan="2">
+                      <p>
+                        DATI DI INPUT
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s6r3 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r4 ro3">
+                    <td class="s6r4c0 text ce20">
+                      <p>
+                        Quantità finale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s6r4c1 out ce24">
+                      <div id="s6r4c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s6r5 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r6 ro4">
+                    <td class="s6r6c0 text ce20">
+                      <p>
+                        Idratazione finale impasto %
+                      </p>
+                    </td>
+                    <td class="s6r6c1 in ce25">
+                      <input id="s6r6c1">
+                    </td>
+                  </tr>
+                  <tr class="s6r7 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r8 ro4">
+                    <td class="s6r8c0 text ce20">
+                      <p>
+                        Sale totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s6r8c1 in ce27">
+                      <input id="s6r8c1">
+                    </td>
+                  </tr>
+                  <tr class="s6r9 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r10 ro4">
+                    <td class="s6r10c0 text ce20">
+                      <p>
+                        Olio totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s6r10c1 in ce27">
+                      <input id="s6r10c1">
+                    </td>
+                  </tr>
+                  <tr class="s6r11 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r12 ro3">
+                    <td class="s6r12c0 text ce20">
+                      <p>
+                        Quantità totale farina impasto (g)
+                      </p>
+                    </td>
+                    <td class="s6r12c1 out ce28">
+                      <div id="s6r12c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s6r13 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r14 ro1">
+                    <td class="s6r14c0 text ce4" colspan="2">
+                      <p>
+                        PRE-IMPASTO
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s6r15 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r16 ro3">
+                    <td class="s6r16c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s6r16c1 out ce30">
+                      <div id="s6r16c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s6r17 ro3">
+                    <td class="s6r17c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s6r17c1 out ce30">
+                      <div id="s6r17c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s6r18 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r19 ro8">
+                    <td class="s6r19c0 text ce4" colspan="2">
+                      <p>
+                        CHIUSURA IMPASTO
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s6r20 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s6r21 ro3">
+                    <td class="s6r21c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s6r21c1 out ce30">
+                      <div id="s6r21c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s6r22 ro3">
+                    <td class="s6r22c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s6r22c1 out ce30">
+                      <div id="s6r22c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s6r23 ro3">
+                    <td class="s6r23c0 text ce19">
+                      <p>
+                        Sale (g)
+                      </p>
+                    </td>
+                    <td class="s6r23c1 out ce30">
+                      <div id="s6r23c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s6r24 ro4">
+                    <td class="s6r24c0 text ce21">
+                      <p>
+                        Olio (g)
+                      </p>
+                    </td>
+                    <td class="s6r24c1 out ce31">
+                      <div id="s6r24c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s6r25 ro3">
+                    <td class="s6r25c0 text ce22" colspan="2">
+                      <p>
+                        <a href="#HOME.A1" target="_blank">Clicca per ritornare alla Home</a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="sheet8" class="tab-content">
+              <table>
+                <colgroup>
+                  <col span="1" class="co3">
+                  <col span="1" class="co4">
+                </colgroup>
+                <tbody>
+                  <tr class="s7r0 ro6">
+                    <td class="s7r0c0 text ce18" colspan="2">
+                      <p>
+                        Milk Roux
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s7r1 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r2 ro7">
+                    <td class="s7r2c0 text ce4" colspan="2">
+                      <p>
+                        DATI DI INPUT
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s7r3 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r4 ro3">
+                    <td class="s7r4c0 text ce20">
+                      <p>
+                        Quantità finale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s7r4c1 out ce24">
+                      <div id="s7r4c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s7r5 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r6 ro4">
+                    <td class="s7r6c0 text ce20">
+                      <p>
+                        Idratazione finale impasto %
+                      </p>
+                    </td>
+                    <td class="s7r6c1 in ce25">
+                      <input id="s7r6c1">
+                    </td>
+                  </tr>
+                  <tr class="s7r7 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r8 ro4">
+                    <td class="s7r8c0 text ce20">
+                      <p>
+                        Sale totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s7r8c1 in ce27">
+                      <input id="s7r8c1">
+                    </td>
+                  </tr>
+                  <tr class="s7r9 ro4">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r10 ro4">
+                    <td class="s7r10c0 text ce20">
+                      <p>
+                        Olio totale impasto (g)
+                      </p>
+                    </td>
+                    <td class="s7r10c1 in ce27">
+                      <input id="s7r10c1">
+                    </td>
+                  </tr>
+                  <tr class="s7r11 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r12 ro3">
+                    <td class="s7r12c0 text ce20">
+                      <p>
+                        Quantità totale farina impasto (g)
+                      </p>
+                    </td>
+                    <td class="s7r12c1 out ce28">
+                      <div id="s7r12c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s7r13 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r14 ro1">
+                    <td class="s7r14c0 text ce4" colspan="2">
+                      <p>
+                        PRE-IMPASTO
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s7r15 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r16 ro3">
+                    <td class="s7r16c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s7r16c1 out ce30">
+                      <div id="s7r16c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s7r17 ro3">
+                    <td class="s7r17c0 text ce19">
+                      <p>
+                        Latte (g)
+                      </p>
+                    </td>
+                    <td class="s7r17c1 out ce30">
+                      <div id="s7r17c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s7r18 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r19 ro8">
+                    <td class="s7r19c0 text ce4" colspan="2">
+                      <p>
+                        CHIUSURA IMPASTO
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="s7r20 ro3">
+                    <td></td>
+                  </tr>
+                  <tr class="s7r21 ro3">
+                    <td class="s7r21c0 text ce19">
+                      <p>
+                        Farina (g)
+                      </p>
+                    </td>
+                    <td class="s7r21c1 out ce30">
+                      <div id="s7r21c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s7r22 ro3">
+                    <td class="s7r22c0 text ce19">
+                      <p>
+                        Acqua (g)
+                      </p>
+                    </td>
+                    <td class="s7r22c1 out ce30">
+                      <div id="s7r22c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s7r23 ro3">
+                    <td class="s7r23c0 text ce19">
+                      <p>
+                        Sale (g)
+                      </p>
+                    </td>
+                    <td class="s7r23c1 out ce30">
+                      <div id="s7r23c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s7r24 ro4">
+                    <td class="s7r24c0 text ce21">
+                      <p>
+                        Olio (g)
+                      </p>
+                    </td>
+                    <td class="s7r24c1 out ce31">
+                      <div id="s7r24c1"></div>
+                    </td>
+                  </tr>
+                  <tr class="s7r25 ro3">
+                    <td class="s7r25c0 text ce22" colspan="2">
+                      <p>
+                        <a href="#HOME.A1" target="_blank">Clicca per ritornare alla Home</a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- Vendor libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js">
+    </script> 
+    <script src="https://cdn.jsdelivr.net/npm/jstat@1.9.4/dist/jstat.min.js">
+    </script> 
+    <script src="https://cdn.jsdelivr.net/gh/formulajs/formulajs@2.6.8/dist/formula.min.js">
+    </script> 
+    <script type="application/javascript">
+            (function (global, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['../numeral'], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        factory(require('../numeral'));
+    } else {
+        factory(global.numeral);
+    }
+    }(this, function (numeral) {
+    numeral.register('locale', 'eur', {
+        delimiters: {
+            thousands: ' ',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'k',
+            million: 'm',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal : function (number) {
+            return number === 1 ? 'er' : 'e';
+        },
+        currency: {
+            symbol: '€'
+        }
+    });
+    }));
+
+
+            (function (window) {
+                window.numeral.locale('eur');
+            })(this);
+    </script> 
+    <script type="application/javascript">
+        (function ($) {
+    var APY = {};
+    APY.cells = {};
+        APY.cells.s0r1c0 = {
+                                    value: 'Dh\u002DCalc',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                                                                    APY.cells.s0r4c0 = {
+                                    value: 'Quanto\u0020vuoi\u0020impastare\u003F',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s0r6c0 = {
+                                    value: 'n\u00B0\u0020panetti',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s0r6c1 = {value: 2,type: 'number',
+                                    format: '0,0'
+                                };                                                                                                                                                            APY.cells.s0r8c0 = {
+                                    value: 'Peso\u0020panetti\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s0r8c1 = {value: 300,type: 'number',
+                                    format: '0,0'
+                                };                                                                                                                                                                                APY.cells.s0r10c0 = {
+                                    value: 'Semplice\u0020calcolatore\u0020di\u0020ingredienti\u0020per\u0020impasti,\u0020non\u0020contempla\u0020il\u0020lievito\u0020perch\u00E9\u0020non\u0020\u00E8\u0020un\u0020compositore\u0020di\u0020ricette\u0020ma\u0020soprattutto\u0020perch\u00E9\u0020il\u0020lievito\u0020va\u0020usato\u0020in\u0020base\u0020all\u0026\u0023039\u003Besperienza',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                                                                                                                                                    APY.cells.s0r15c0 = {
+                                    value: 'Powered\u0020By\u0020Kikk0s\u003C\/a\u003E',
+                                    type: 'text',
+                                    format: ''
+                                };    APY.cells.s1r0c0 = {
+                                    value: 'Diretto',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s1r2c0 = {
+                                    value: 'DATI\u0020DI\u0020INPUT',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s1r4c0 = {
+                                    value: 'Quantit\u00E0\u0020finale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s1r4c1 = {value: 600,type: 'number',
+                                    format: ''
+                                };                                                                                                                                                            APY.cells.s1r6c0 = {
+                                    value: 'Idratazione\u0020finale\u0020impasto\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s1r6c1 = {value: 0.8,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                                                            APY.cells.s1r8c0 = {
+                                    value: 'Sale\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s1r8c1 = {value: 0.025,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s1r10c0 = {
+                                    value: 'Olio\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s1r10c1 = {value: 0.03,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s1r12c0 = {
+                                    value: 'Quantit\u00E0\u0020totale\u0020farina\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s1r12c1 = {value: 323.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s1r14c0 = {
+                                    value: 'DOSI',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s1r16c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s1r16c1 = {value: 323.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s1r17c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s1r17c1 = {value: 258.8,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s1r18c0 = {
+                                    value: 'Sale\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s1r18c1 = {value: 8.1,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s1r19c0 = {
+                                    value: 'Olio\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s1r19c1 = {value: 9.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s1r20c0 = {
+                                    value: 'Clicca\u0020per\u0020ritornare\u0020alla\u0020Home\u003C\/a\u003E',
+                                    type: 'text',
+                                    format: ''
+                                };    APY.cells.s2r0c0 = {
+                                    value: 'Biga',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s2r2c0 = {
+                                    value: 'DATI\u0020DI\u0020INPUT',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s2r4c0 = {
+                                    value: 'Quantit\u00E0\u0020finale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r4c1 = {value: 600,type: 'number',
+                                    format: ''
+                                };                                                                                                                                                            APY.cells.s2r6c0 = {
+                                    value: 'Idratazione\u0020finale\u0020impasto\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r6c1 = {value: 0.8,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                                                            APY.cells.s2r8c0 = {
+                                    value: 'Sale\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r8c1 = {value: 0.025,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s2r10c0 = {
+                                    value: 'Olio\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r10c1 = {value: 0.03,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s2r12c0 = {
+                                    value: 'Quantit\u00E0\u0020totale\u0020farina\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r12c1 = {value: 323.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s2r14c0 = {
+                                    value: 'BIGA',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s2r16c0 = {
+                                    value: 'Percentuale\u0020di\u0020utilizzo\u0020BIGA\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r16c1 = {value: 0.45,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                    APY.cells.s2r17c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r17c1 = {value: 145.6,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s2r18c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r18c1 = {value: 64.1,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s2r20c0 = {
+                                    value: 'RINFRESCO',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s2r22c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r22c1 = {value: 177.9,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s2r23c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r23c1 = {value: 194.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s2r24c0 = {
+                                    value: 'Sale\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r24c1 = {value: 8.1,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s2r25c0 = {
+                                    value: 'Olio\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s2r25c1 = {value: 9.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s2r26c0 = {
+                                    value: 'Clicca\u0020per\u0020ritornare\u0020alla\u0020Home\u003C\/a\u003E',
+                                    type: 'text',
+                                    format: ''
+                                };    APY.cells.s3r0c0 = {
+                                    value: 'Poolish',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s3r2c0 = {
+                                    value: 'DATI\u0020DI\u0020INPUT',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s3r4c0 = {
+                                    value: 'Quantit\u00E0\u0020finale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r4c1 = {value: 600,type: 'number',
+                                    format: ''
+                                };                                                                                                                                                            APY.cells.s3r6c0 = {
+                                    value: 'Idratazione\u0020finale\u0020impasto\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r6c1 = {value: 0.8,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                                                            APY.cells.s3r8c0 = {
+                                    value: 'Sale\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r8c1 = {value: 0.025,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s3r10c0 = {
+                                    value: 'Olio\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r10c1 = {value: 0.03,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s3r12c0 = {
+                                    value: 'Quantit\u00E0\u0020totale\u0020farina\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r12c1 = {value: 323.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s3r14c0 = {
+                                    value: 'POOLISH',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s3r16c0 = {
+                                    value: 'Percentuale\u0020di\u0020utilizzo\u0020POOLISH\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r16c1 = {value: 0.7,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                    APY.cells.s3r17c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r17c1 = {value: 226.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s3r18c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r18c1 = {value: 226.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s3r20c0 = {
+                                    value: 'RINFRESCO',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s3r22c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r22c1 = {value: 97,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s3r23c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r23c1 = {value: 32.3,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s3r24c0 = {
+                                    value: 'Sale\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r24c1 = {value: 8.1,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s3r25c0 = {
+                                    value: 'Olio\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s3r25c1 = {value: 9.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s3r26c0 = {
+                                    value: 'Clicca\u0020per\u0020ritornare\u0020alla\u0020Home\u003C\/a\u003E',
+                                    type: 'text',
+                                    format: ''
+                                };    APY.cells.s4r0c0 = {
+                                    value: 'Sponge',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s4r2c0 = {
+                                    value: 'DATI\u0020DI\u0020INPUT',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s4r4c0 = {
+                                    value: 'Quantit\u00E0\u0020finale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r4c1 = {value: 600,type: 'number',
+                                    format: ''
+                                };                                                                                                                                                            APY.cells.s4r6c0 = {
+                                    value: 'Idratazione\u0020finale\u0020impasto\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r6c1 = {value: 0.8,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                                                            APY.cells.s4r8c0 = {
+                                    value: 'Sale\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r8c1 = {value: 0.025,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s4r10c0 = {
+                                    value: 'Olio\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r10c1 = {value: 0.03,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s4r12c0 = {
+                                    value: 'Quantit\u00E0\u0020totale\u0020farina\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r12c1 = {value: 323.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s4r14c0 = {
+                                    value: 'SPONGE',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s4r16c0 = {
+                                    value: 'Percentuale\u0020di\u0020utilizzo\u0020prefermento\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r16c1 = {value: 0.5,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                    APY.cells.s4r17c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r17c1 = {value: 161.8,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s4r18c0 = {
+                                    value: 'Idtratazione\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r18c1 = {value: 0.6,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                    APY.cells.s4r19c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r19c1 = {value: 97.1,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s4r20c0 = {
+                                    value: 'Sale\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r20c1 = {value: 0.02,type: 'number',
+                                    format: '0.00%'
+                                };                                                                                                                    APY.cells.s4r21c0 = {
+                                    value: 'Sale\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r21c1 = {value: 3.2,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s4r23c0 = {
+                                    value: 'RINFRESCO',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s4r25c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r25c1 = {value: 161.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s4r26c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r26c1 = {value: 161.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s4r27c0 = {
+                                    value: 'Sale\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r27c1 = {value: 4.9,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s4r28c0 = {
+                                    value: 'Olio\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s4r28c1 = {value: 9.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s4r29c0 = {
+                                    value: 'Clicca\u0020per\u0020ritornare\u0020alla\u0020Home\u003C\/a\u003E',
+                                    type: 'text',
+                                    format: ''
+                                };    APY.cells.s5r0c0 = {
+                                    value: 'Autolisi',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s5r2c0 = {
+                                    value: 'DATI\u0020DI\u0020INPUT',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s5r4c0 = {
+                                    value: 'Quantit\u00E0\u0020finale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r4c1 = {value: 600,type: 'number',
+                                    format: ''
+                                };                                                                                                                                                            APY.cells.s5r6c0 = {
+                                    value: 'Idratazione\u0020finale\u0020impasto\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r6c1 = {value: 0.8,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                                                            APY.cells.s5r8c0 = {
+                                    value: 'Sale\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r8c1 = {value: 0.025,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s5r10c0 = {
+                                    value: 'Olio\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r10c1 = {value: 0.03,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s5r12c0 = {
+                                    value: 'Quantit\u00E0\u0020totale\u0020farina\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r12c1 = {value: 323.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s5r14c0 = {
+                                    value: 'AUTOLISI',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s5r16c0 = {
+                                    value: 'Percentuale\u0020di\u0020utilizzo\u0020autolisi\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r16c1 = {value: 0.5,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                    APY.cells.s5r17c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r17c1 = {value: 161.8,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s5r18c0 = {
+                                    value: 'Idtratazione\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r18c1 = {value: 0.6,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                    APY.cells.s5r19c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r19c1 = {value: 97.1,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s5r21c0 = {
+                                    value: 'CHIUSURA\u0020IMPASTO',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s5r23c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r23c1 = {value: 161.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s5r24c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r24c1 = {value: 161.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s5r25c0 = {
+                                    value: 'Sale\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r25c1 = {value: 8.1,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s5r26c0 = {
+                                    value: 'Olio\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s5r26c1 = {value: 9.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s5r27c0 = {
+                                    value: 'Clicca\u0020per\u0020ritornare\u0020alla\u0020Home\u003C\/a\u003E',
+                                    type: 'text',
+                                    format: ''
+                                };    APY.cells.s6r0c0 = {
+                                    value: 'Water\u0020Roux',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s6r2c0 = {
+                                    value: 'DATI\u0020DI\u0020INPUT',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s6r4c0 = {
+                                    value: 'Quantit\u00E0\u0020finale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r4c1 = {value: 600,type: 'number',
+                                    format: ''
+                                };                                                                                                                                                            APY.cells.s6r6c0 = {
+                                    value: 'Idratazione\u0020finale\u0020impasto\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r6c1 = {value: 0.8,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                                                            APY.cells.s6r8c0 = {
+                                    value: 'Sale\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r8c1 = {value: 0.025,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s6r10c0 = {
+                                    value: 'Olio\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r10c1 = {value: 0.03,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s6r12c0 = {
+                                    value: 'Quantit\u00E0\u0020totale\u0020farina\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r12c1 = {value: 323.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s6r14c0 = {
+                                    value: 'PRE\u002DIMPASTO',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s6r16c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r16c1 = {value: 19.4,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s6r17c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r17c1 = {value: 97,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s6r19c0 = {
+                                    value: 'CHIUSURA\u0020IMPASTO',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s6r21c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r21c1 = {value: 304.1,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s6r22c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r22c1 = {value: 161.8,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s6r23c0 = {
+                                    value: 'Sale\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r23c1 = {value: 15,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s6r24c0 = {
+                                    value: 'Olio\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s6r24c1 = {value: 9.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s6r25c0 = {
+                                    value: 'Clicca\u0020per\u0020ritornare\u0020alla\u0020Home\u003C\/a\u003E',
+                                    type: 'text',
+                                    format: ''
+                                };    APY.cells.s7r0c0 = {
+                                    value: 'Milk\u0020Roux',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s7r2c0 = {
+                                    value: 'DATI\u0020DI\u0020INPUT',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s7r4c0 = {
+                                    value: 'Quantit\u00E0\u0020finale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r4c1 = {value: 600,type: 'number',
+                                    format: ''
+                                };                                                                                                                                                            APY.cells.s7r6c0 = {
+                                    value: 'Idratazione\u0020finale\u0020impasto\u0020\u0025',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r6c1 = {value: 0.8,type: 'number',
+                                    format: '0.[000000000]%'
+                                };                                                                                                                                                            APY.cells.s7r8c0 = {
+                                    value: 'Sale\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r8c1 = {value: 0.025,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s7r10c0 = {
+                                    value: 'Olio\u0020totale\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r10c1 = {value: 0.03,type: 'number',
+                                    format: '0.0%'
+                                };                                                                                                                                                            APY.cells.s7r12c0 = {
+                                    value: 'Quantit\u00E0\u0020totale\u0020farina\u0020impasto\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r12c1 = {value: 323.5,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s7r14c0 = {
+                                    value: 'PRE\u002DIMPASTO',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s7r16c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r16c1 = {value: 19.4,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s7r17c0 = {
+                                    value: 'Latte\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r17c1 = {value: 194,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                                                            APY.cells.s7r19c0 = {
+                                    value: 'CHIUSURA\u0020IMPASTO',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                                                                                                                                            APY.cells.s7r21c0 = {
+                                    value: 'Farina\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r21c1 = {value: 304.1,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s7r22c0 = {
+                                    value: 'Acqua\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r22c1 = {value: 64.8,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s7r23c0 = {
+                                    value: 'Sale\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r23c1 = {value: 15,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s7r24c0 = {
+                                    value: 'Olio\u0020\u0028g\u0029',
+                                    type: 'text',
+                                    format: ''
+                                };
+                                            APY.cells.s7r24c1 = {value: 9.7,type: 'number',
+                                    format: '0.0'
+                                };                                                                                                                    APY.cells.s7r25c0 = {
+                                    value: 'Clicca\u0020per\u0020ritornare\u0020alla\u0020Home\u003C\/a\u003E',
+                                    type: 'text',
+                                    format: ''
+                                };
+                APY.formulas = {
+                                            s1r4c1: function() { APY.set('s1r4c1',APY.RANGE([0,6,1])*APY.RANGE([0,8,1])) },
+                                                        s1r12c1: function() { APY.set('s1r12c1',APY.RANGE([1,4,1])/(1+(APY.RANGE([1,6,1])+APY.RANGE([1,8,1])+APY.RANGE([1,10,1])))) },
+                                                        s1r16c1: function() { APY.set('s1r16c1',APY.RANGE([1,12,1])) },
+                                                        s1r17c1: function() { APY.set('s1r17c1',APY.RANGE([1,6,1])*APY.RANGE([1,16,1])) },
+                                                        s1r18c1: function() { APY.set('s1r18c1',APY.RANGE([1,8,1])*APY.RANGE([1,12,1])) },
+                                                        s1r19c1: function() { APY.set('s1r19c1',APY.RANGE([1,10,1])*APY.RANGE([1,16,1])) },
+                                                        s2r4c1: function() { APY.set('s2r4c1',APY.RANGE([0,6,1])*APY.RANGE([0,8,1])) },
+                                                        s2r12c1: function() { APY.set('s2r12c1',APY.RANGE([2,4,1])/(1+(APY.RANGE([2,6,1])+APY.RANGE([2,8,1])+APY.RANGE([2,10,1])))) },
+                                                        s2r17c1: function() { APY.set('s2r17c1',APY.RANGE([2,16,1])*APY.RANGE([2,12,1])) },
+                                                        s2r18c1: function() { APY.set('s2r18c1',44/100*APY.RANGE([2,17,1])) },
+                                                        s2r22c1: function() { APY.set('s2r22c1',(APY.RANGE([2,12,1])-APY.RANGE([2,17,1]))) },
+                                                        s2r23c1: function() { APY.set('s2r23c1',(APY.RANGE([2,6,1])*APY.RANGE([2,12,1])-APY.RANGE([2,18,1]))) },
+                                                        s2r24c1: function() { APY.set('s2r24c1',APY.RANGE([2,8,1])*APY.RANGE([2,12,1])) },
+                                                        s2r25c1: function() { APY.set('s2r25c1',APY.RANGE([2,10,1])*APY.RANGE([2,12,1])) },
+                                                        s3r4c1: function() { APY.set('s3r4c1',APY.RANGE([0,6,1])*APY.RANGE([0,8,1])) },
+                                                        s3r12c1: function() { APY.set('s3r12c1',APY.RANGE([3,4,1])/(1+(APY.RANGE([3,6,1])+APY.RANGE([3,8,1])+APY.RANGE([3,10,1])))) },
+                                                        s3r17c1: function() { APY.set('s3r17c1',APY.RANGE([3,16,1])*APY.RANGE([3,12,1])) },
+                                                        s3r18c1: function() { APY.set('s3r18c1',APY.RANGE([3,17,1])) },
+                                                        s3r22c1: function() { APY.set('s3r22c1',(APY.RANGE([3,12,1])-APY.RANGE([3,17,1]))) },
+                                                        s3r23c1: function() { APY.set('s3r23c1',(APY.RANGE([3,6,1])*APY.RANGE([3,12,1])-APY.RANGE([3,18,1]))) },
+                                                        s3r24c1: function() { APY.set('s3r24c1',APY.RANGE([3,8,1])*APY.RANGE([3,12,1])) },
+                                                        s3r25c1: function() { APY.set('s3r25c1',APY.RANGE([3,10,1])*APY.RANGE([3,12,1])) },
+                                                        s4r4c1: function() { APY.set('s4r4c1',APY.RANGE([0,6,1])*APY.RANGE([0,8,1])) },
+                                                        s4r12c1: function() { APY.set('s4r12c1',APY.RANGE([4,4,1])/(1+(APY.RANGE([4,6,1])+APY.RANGE([4,8,1])+APY.RANGE([4,10,1])))) },
+                                                        s4r17c1: function() { APY.set('s4r17c1',APY.RANGE([4,16,1])*APY.RANGE([4,12,1])) },
+                                                        s4r19c1: function() { APY.set('s4r19c1',APY.RANGE([4,18,1])*APY.RANGE([4,17,1])) },
+                                                        s4r21c1: function() { APY.set('s4r21c1',APY.RANGE([4,20,1])*APY.RANGE([4,17,1])) },
+                                                        s4r25c1: function() { APY.set('s4r25c1',(APY.RANGE([4,12,1])-APY.RANGE([4,17,1]))) },
+                                                        s4r26c1: function() { APY.set('s4r26c1',(APY.RANGE([4,6,1])*APY.RANGE([4,12,1])-APY.RANGE([4,19,1]))) },
+                                                        s4r27c1: function() { APY.set('s4r27c1',APY.RANGE([4,8,1])*APY.RANGE([4,12,1])-APY.RANGE([4,21,1])) },
+                                                        s4r28c1: function() { APY.set('s4r28c1',APY.RANGE([4,10,1])*APY.RANGE([4,12,1])) },
+                                                        s5r4c1: function() { APY.set('s5r4c1',APY.RANGE([0,6,1])*APY.RANGE([0,8,1])) },
+                                                        s5r12c1: function() { APY.set('s5r12c1',APY.RANGE([5,4,1])/(1+(APY.RANGE([5,6,1])+APY.RANGE([5,8,1])+APY.RANGE([5,10,1])))) },
+                                                        s5r17c1: function() { APY.set('s5r17c1',APY.RANGE([5,16,1])*APY.RANGE([5,12,1])) },
+                                                        s5r19c1: function() { APY.set('s5r19c1',APY.RANGE([5,18,1])*APY.RANGE([5,17,1])) },
+                                                        s5r23c1: function() { APY.set('s5r23c1',(APY.RANGE([5,12,1])-APY.RANGE([5,17,1]))) },
+                                                        s5r24c1: function() { APY.set('s5r24c1',(APY.RANGE([5,6,1])*APY.RANGE([5,12,1])-APY.RANGE([5,19,1]))) },
+                                                        s5r25c1: function() { APY.set('s5r25c1',APY.RANGE([5,8,1])*APY.RANGE([5,12,1])) },
+                                                        s5r26c1: function() { APY.set('s5r26c1',APY.RANGE([5,10,1])*APY.RANGE([5,12,1])) },
+                                                        s6r4c1: function() { APY.set('s6r4c1',APY.RANGE([0,6,1])*APY.RANGE([0,8,1])) },
+                                                        s6r12c1: function() { APY.set('s6r12c1',APY.RANGE([6,4,1])/(1+(APY.RANGE([6,6,1])+APY.RANGE([6,8,1])+APY.RANGE([6,10,1])))) },
+                                                        s6r16c1: function() { APY.set('s6r16c1',6/100*APY.RANGE([6,12,1])) },
+                                                        s6r17c1: function() { APY.set('s6r17c1',APY.RANGE([6,16,1])*5) },
+                                                        s6r21c1: function() { APY.set('s6r21c1',(APY.RANGE([6,12,1])-APY.RANGE([6,16,1]))) },
+                                                        s6r22c1: function() { APY.set('s6r22c1',(APY.RANGE([6,6,1])*APY.RANGE([6,12,1])-APY.RANGE([6,17,1]))) },
+                                                        s6r23c1: function() { APY.set('s6r23c1',APY.RANGE([6,8,1])*APY.RANGE([6,4,1])) },
+                                                        s6r24c1: function() { APY.set('s6r24c1',APY.RANGE([6,10,1])*APY.RANGE([6,12,1])) },
+                                                        s7r4c1: function() { APY.set('s7r4c1',APY.RANGE([0,6,1])*APY.RANGE([0,8,1])) },
+                                                        s7r12c1: function() { APY.set('s7r12c1',APY.RANGE([7,4,1])/(1+(APY.RANGE([7,6,1])+APY.RANGE([7,8,1])+APY.RANGE([7,10,1])))) },
+                                                        s7r16c1: function() { APY.set('s7r16c1',6/100*APY.RANGE([7,12,1])) },
+                                                        s7r17c1: function() { APY.set('s7r17c1',APY.RANGE([7,16,1])*10) },
+                                                        s7r21c1: function() { APY.set('s7r21c1',(APY.RANGE([7,12,1])-APY.RANGE([7,16,1]))) },
+                                                        s7r22c1: function() { APY.set('s7r22c1',(APY.RANGE([7,6,1])*APY.RANGE([7,12,1])-APY.RANGE([7,17,1]))) },
+                                                        s7r23c1: function() { APY.set('s7r23c1',APY.RANGE([7,8,1])*APY.RANGE([7,4,1])) },
+                                                        s7r24c1: function() { APY.set('s7r24c1',APY.RANGE([7,10,1])*APY.RANGE([7,12,1])) },
+                            };
+
+        APY.calculate = function () {
+                            // Step 1
+                                APY.formulas.s1r4c1();
+                                APY.formulas.s2r4c1();
+                                APY.formulas.s3r4c1();
+                                APY.formulas.s4r4c1();
+                                APY.formulas.s5r4c1();
+                                APY.formulas.s6r4c1();
+                                APY.formulas.s7r4c1();
+                                            // Step 2
+                                APY.formulas.s1r12c1();
+                                APY.formulas.s2r12c1();
+                                APY.formulas.s3r12c1();
+                                APY.formulas.s4r12c1();
+                                APY.formulas.s5r12c1();
+                                APY.formulas.s6r12c1();
+                                APY.formulas.s6r23c1();
+                                APY.formulas.s7r12c1();
+                                APY.formulas.s7r23c1();
+                                            // Step 3
+                                APY.formulas.s1r16c1();
+                                APY.formulas.s1r18c1();
+                                APY.formulas.s2r17c1();
+                                APY.formulas.s2r24c1();
+                                APY.formulas.s2r25c1();
+                                APY.formulas.s3r17c1();
+                                APY.formulas.s3r24c1();
+                                APY.formulas.s3r25c1();
+                                APY.formulas.s4r17c1();
+                                APY.formulas.s4r28c1();
+                                APY.formulas.s5r17c1();
+                                APY.formulas.s5r25c1();
+                                APY.formulas.s5r26c1();
+                                APY.formulas.s6r16c1();
+                                APY.formulas.s6r24c1();
+                                APY.formulas.s7r16c1();
+                                APY.formulas.s7r24c1();
+                                            // Step 4
+                                APY.formulas.s1r17c1();
+                                APY.formulas.s1r19c1();
+                                APY.formulas.s2r18c1();
+                                APY.formulas.s2r22c1();
+                                APY.formulas.s3r18c1();
+                                APY.formulas.s3r22c1();
+                                APY.formulas.s4r19c1();
+                                APY.formulas.s4r21c1();
+                                APY.formulas.s4r25c1();
+                                APY.formulas.s5r19c1();
+                                APY.formulas.s5r23c1();
+                                APY.formulas.s6r17c1();
+                                APY.formulas.s6r21c1();
+                                APY.formulas.s7r17c1();
+                                APY.formulas.s7r21c1();
+                                            // Step 5
+                                APY.formulas.s2r23c1();
+                                APY.formulas.s3r23c1();
+                                APY.formulas.s4r26c1();
+                                APY.formulas.s4r27c1();
+                                APY.formulas.s5r24c1();
+                                APY.formulas.s6r22c1();
+                                APY.formulas.s7r22c1();
+                                                };
+
+    APY.getValue = function (value, type, format) {
+        type = type ? type : 'text';
+        var returnedValue;
+        if (type === 'boolean') {
+            returnedValue = (value === 'true');
+        } else if (type === 'number') {
+            returnedValue = numeral(value).value();
+        } else if (type === 'date') {
+            var m = format ? moment(value, format) : moment(value);
+            if (!!value && m.isValid()) {
+                returnedValue = m.toDate();
+            } else {
+                returnedValue = null;
+            }
+        } else {
+            returnedValue = value;
+        }
+
+        return returnedValue;
+    };
+
+    APY.set = function (cellId, value) {
+        var cell = APY.cells[cellId];
+        if (!cell) {
+            return;
+        }
+
+        cell.value = value;
+
+        var $cell = $('#' + cellId);
+        if ($cell.length === 0) {
+            return;
+        }
+
+        var displayedValue = APY.formatValue(value, cell.type, cell.format);
+        if ($cell.is('div')) {
+            $cell.html(displayedValue);
+            $cell.siblings('input').val(displayedValue);
+        } else {
+            $cell.val(displayedValue);
+        }
+    };
+
+    APY.formatValue = function (value, type, format) {
+        if (value instanceof Error) {
+            return value;
+        }
+
+        var formattedValue = value;
+
+        if (type === 'number') {
+            if (value === null) {
+                return '';
+            }
+            format = format ? format : '0.[000000000]';
+            value = Math.abs(value) <= 1e-7 ? 0 : value;
+            formattedValue = numeral(value).format(format);
+        }
+
+        if (type === 'date') {
+            if (!value) {
+                return value;
+            }
+
+            formattedValue = moment(value).format(format);
+        }
+
+        return formattedValue;
+    };
+
+    APY.getInputs = function () {
+        var inputs = {};
+        var $applicationInput = $('.application input[type!=hidden], .application select, .application textarea');
+        $applicationInput.each(function () {
+            var cellId = $(this).attr('id');
+            var cell = APY.cells[cellId];
+
+            if (cell) {
+                var value = cell.value;
+
+                if (value instanceof Date) {
+                    value = APY.dateToString(value);
+                }
+
+                inputs[cellId] = {
+                    value: value,
+                    type: cell.type
+                };
+            }
+        });
+
+        return inputs;
+    };
+
+    APY.setInputs = function (data) {
+        Object.keys(data).forEach(function (key) {
+            if (data.hasOwnProperty(key)) {
+                var value = APY.getValue(data[key].value, data[key].type);
+                APY.set(key, value);
+            }
+        });
+    };
+
+    APY.dateToString = function (date) {
+        return date.getFullYear() + '-' +
+            ((date.getMonth() + 1) < 10 ? '0' : '') +
+            (date.getMonth() + 1) + '-' +
+            (date.getDate() < 10 ? '0' : '') +
+            date.getDate() +
+            'T' +
+            (date.getHours() < 10 ? '0' : '') +
+            date.getHours() +
+            ':' +
+            (date.getMinutes() < 10 ? '0' : '') +
+            date.getMinutes() +
+            ':' +
+            (date.getSeconds() < 10 ? '0' : '') +
+            date.getSeconds();
+    };
+
+    APY.RANGE = function () {
+        var value = null;
+        if (arguments.length === 1) {
+            var cellId = 's' + arguments[0][0] + 'r' + arguments[0][1] + 'c' + arguments[0][2];
+
+            if (APY.cells && APY.cells.hasOwnProperty(cellId)) {
+                value = APY.cells[cellId].value;
+            }
+
+            return value;
+        } else if (arguments.length === 2) {
+            var values = [];
+            var head = arguments[0];
+            var tail = arguments[1];
+            for (var i = 0; i <= (tail[1] - head[1]); i++) {
+                var row = [];
+                for (var j = 0; j <= tail[2] - head[2]; j++) {
+                    value = null;
+                    cellId = 's' + head[0] + 'r' + (head[1] + i) + 'c' + (head[2] + j);
+
+                    if (APY.cells && APY.cells.hasOwnProperty(cellId)) {
+                        value = APY.cells[cellId].value;
+                    }
+                    row.push(value);
+                }
+                values.push(row);
+            }
+
+            return values;
+        }
+    };
+
+    APY.onSaveButtonClicked = function () {
+        var blob = new Blob([JSON.stringify(APY.getInputs())], {type: 'application/json'});
+        var fileName = document.title + ' ' + (new Date()).toISOString().slice(0, 10) + '.json';
+        var url = window.URL.createObjectURL(blob);
+
+        if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveOrOpenBlob(blob, fileName);
+        } else {
+            var a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    };
+
+    APY.onDataFileSelected = function () {
+        var file = document.getElementById('data-file');
+        var blob = file.files[0];
+        if (blob) {
+            var reader = new FileReader();
+
+            reader.onload = function (evt) {
+                APY.setInputs(JSON.parse(evt.target.result));
+                APY.calculate();
+            };
+
+            reader.onerror = function (evt) {
+                console.error("An error occurred reading the file", evt);
+            };
+
+            reader.readAsText(blob, "UTF-8");
+        }
+    };
+
+    APY.onCalculateButtonClicked = function () {
+        APY.calculate();
+    };
+
+    APY.onSendButtonClicked = function () {
+        $('form.application').submit();
+    };
+
+    // Expose Appizy App API called APY :)
+    window.APY = APY;
+
+
+    APY.init =  function () {
+        var $applicationInput = $('.application input[type!=hidden], .application select, .application textarea');
+
+        // Update values in input fields on change
+        $applicationInput.on('change', function () {
+            var cell = APY.cells[$(this).attr('id')];
+            cell.value = APY.getValue($(this).val(), cell.type, cell.format);
+            $(this).val(APY.formatValue(cell.value, cell.type, cell.format));
+
+                        APY.calculate();
+                    });
+
+        // Display formatted values in input fields on application start
+        $applicationInput.each(function () {
+            var cell = APY.cells[$(this).attr('id')];
+            // Recompute Office value in Javascript value
+            cell.value = APY.getValue(cell.value, cell.type);
+            $(this).val(APY.formatValue(cell.value, cell.type, cell.format));
+        });
+
+        APY.calculate();
+    };
+
+    window.addEventListener('load', APY.init);
+
+    $('form.application').on('submit', function (event) {
+        if (event.keyCode === '13') {
+            event.preventDefault();
+                        APY.calculate();
+                    }
+    });
+
+    })(jQuery);
+    </script> 
+    <script>
+            $(document).ready(function () {
+    $(".nav a").click(function (event) {
+        event.preventDefault();
+        $(this).parent().addClass("active");
+        $(this).parent().siblings().removeClass("active");
+
+        var tab = $(this).attr("href");
+        $(".tab-content").not(tab).css("display", "none");
+        $(tab).fadeIn();
+    });
+    });
+
+    </script>
+  </body>
+</html>
